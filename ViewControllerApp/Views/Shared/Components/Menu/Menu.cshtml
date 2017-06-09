@@ -1,0 +1,13 @@
+﻿﻿@model ViewControllerApp.Models.Menu
+
+<ul class="nav nav-sidebar">
+@foreach(var menuItem in Model.MenuItems) {
+    <li@(menuItem.Active ? Html.Raw(" class=\"active\"") : null)>
+		@Html.ActionLink(
+		    menuItem.Text, 
+		    menuItem.Action, 
+		    menuItem.Controller
+	    )
+	</li>	
+}
+</ul>

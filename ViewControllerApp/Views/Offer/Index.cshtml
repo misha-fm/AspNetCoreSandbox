@@ -1,0 +1,22 @@
+﻿@model OfferVm
+
+<div class="row">
+    <div class="col-md-6">
+		<form asp-controller="Offer" asp-action="Index">
+			<label>Lucky Employee</label>
+			<select asp-for="SelectedItems" asp-items="@Model.Categories" placeholder="Выберите категории продукции..."></select>
+			<input type="submit" />
+		</form>
+	</div>
+</div>
+
+@section Scripts {
+	<script type="text/javascript" src="~/lib/selectize/js/standalone/selectize.js"></script>
+	<script>
+	$(document).ready(function(){
+	    $("#SelectedItems").selectize({
+            plugins: ['remove_button']
+	    });
+	});
+	</script>
+}
